@@ -1,0 +1,48 @@
+2021-04-10
+Page No 1
+
+{"title": "uBlock Origin works best on Firefox", "link": "https://github.com/gorhill/uBlock/wiki/uBlock-Origin-works-best-on-Firefox", "points": 1060}
+{"title": "Embrace the Grind", "link": "https://jacobian.org/2021/apr/7/embrace-the-grind/", "points": 701}
+{"title": "Zoom zero-day discovery", "link": "https://blog.malwarebytes.com/exploits-and-vulnerabilities/2021/04/zoom-zero-day-discovery-makes-calls-safer-hackers-200000-richer/", "points": 467}
+{"title": "Scientists who say the lab-leak hypothesis for SARS-CoV-2 shouldn't be ruled out", "link": "https://www.technologyreview.com/2021/03/18/1021030/coronavirus-leak-wuhan-lab-scientists-conspiracy/", "points": 449}
+{"title": "Vgpu_unlock: Unlock vGPU functionality for consumer grade GPUs", "link": "https://github.com/DualCoder/vgpu_unlock", "points": 371}
+{"title": "HW accelerated Xwayland rendering for Nvidia merged", "link": "https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/587", "points": 223}
+{"title": "AWS Lambda Edge changes duration billing granularity from 50ms down to 1ms", "link": "https://aws.amazon.com/about-aws/whats-new/2021/03/cloudfront-lambda-at-edge-billing-granularity/", "points": 209}
+{"title": "Hacking a $200 Under Desk Exercise Bike", "link": "https://codaris.github.io/UnderDeskBike/", "points": 189}
+{"title": "The patent troll that won a $308M jury trial against Apple", "link": "https://www.letterspatent.org/p/meet-the-patent-troll-that-won-a", "points": 164}
+{"title": "FreeBSD/arm64 becoming Tier 1 in FreeBSD 13", "link": "https://lists.freebsd.org/pipermail/freebsd-announce/2021-April/002030.html", "points": 141}
+{"title": "Jurigged \u2013 Hot code reloading for Python", "link": "https://github.com/breuleux/jurigged", "points": 121}
+{"title": "Monster Mash: A Sketch-Based Tool for Casual 3D Modeling and Animation", "link": "https://ai.googleblog.com/2021/04/monster-mash-sketch-based-tool-for.html", "points": 119}
+{"title": "Links are not buttons (2013)", "link": "https://karlgroves.com/2013/05/14/links-are-not-buttons-neither-are-divs-and-spans/", "points": 113}
+{"title": "Oliver Heaviside (1850-1925) \u2013 Physical Mathematician (1983)", "link": "https://sci-hub.se/10.1093/teamat/2.2.55", "points": 106}
+{"title": "A look at LLVM: comparing clamp implementations", "link": "https://secret.club/2021/04/09/std-clamp.html", "points": 103}
+{"title": "Was the NE2000 really that bad?", "link": "http://www.os2museum.com/wp/was-the-ne2000-really-that-bad/", "points": 102}
+
+Page No 2
+
+{"title": "The architecture behind a one-person tech startup", "link": "https://anthonynsimon.com/blog/one-man-saas-architecture/", "points": 1258}
+{"title": "Docker without Docker", "link": "https://fly.io/blog/docker-without-docker/", "points": 647}
+{"title": "Monkey MindPong", "link": "https://neuralink.com/blog/", "points": 645}
+{"title": "Initial M1 support merged into Linux SoC tree", "link": "https://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git/commit/?h=for-next&id=0d5fe4b31785b732b71e764b55cda5c8d6e3bbbf", "points": 618}
+{"title": "Amazon workers vote against unionizing in Alabama", "link": "https://www.wsj.com/articles/amazon-is-ahead-in-union-vote-as-tallying-set-to-resume-11617960604", "points": 519}
+{"title": "Figma and Canva are taking on Adobe and winning", "link": "https://kwokchain.com/2021/02/05/atomic-concepts/", "points": 257}
+{"title": "Scalable, Resilient Brainfuck", "link": "https://zserge.com/posts/bfaas/", "points": 227}
+{"title": "Silphium", "link": "https://en.wikipedia.org/wiki/Silphium", "points": 156}
+{"title": "SEC Charges 1inMM Capital, LLC with Operating a $690M Ponzi Scheme", "link": "https://www.sec.gov/news/press-release/2021-58", "points": 122}
+{"title": "Food waste responsible for 10% of global emissions?", "link": "https://www.bloomberg.com/news/articles/2021-03-04/in-one-year-a-billion-tons-of-food-got-wasted-mostly-at-home", "points": 116}
+
+Page No 3
+
+{"title": "The Real Book", "link": "https://99percentinvisible.org/episode/the-real-book/", "points": 552}
+{"title": "Idempotence now prevents pain later", "link": "https://ericlathrop.com/2021/04/idempotence-now-prevents-pain-later/", "points": 405}
+{"title": "You Don't Need a GUI", "link": "https://github.com/you-dont-need/You-Dont-Need-GUI", "points": 368}
+{"title": "Nix is the ultimate DevOps toolkit", "link": "https://tech.channable.com/posts/2021-04-09-nix-is-the-ultimate-devops-toolkit.html", "points": 367}
+{"title": "Home-Built Scanning Tunneling Microscope (2015)", "link": "https://dberard.com/home-built-stm/", "points": 354}
+{"title": "W3C slaps down Google's proposal to treat multiple domains as same origin", "link": "https://www.theregister.com/2021/04/08/w3c_google_multple_domains/", "points": 210}
+{"title": "Why Hypercard had to die (2011)", "link": "http://www.loper-os.org/?p=568", "points": 152}
+{"title": "The Web MiniDisc App (2020)", "link": "https://stefano.brilli.me/blog/web-minidisc/", "points": 139}
+{"title": "Eu_sst: 20% probability for large satellite collision", "link": "https://twitter.com/EU_SST/status/1380120766071635968", "points": 138}
+{"title": "My Son, the Organ Donor", "link": "https://kimmoldofsky.medium.com/my-son-the-organ-donor-5593edbbc526", "points": 125}
+{"title": "Hawking Hawking", "link": "https://www.math.columbia.edu/~woit/wordpress/?p=12235", "points": 112}
+{"title": "The Human Eye Webcam [video]", "link": "https://www.youtube.com/watch?v=JMxr8Nq-w_w", "points": 103}
+
