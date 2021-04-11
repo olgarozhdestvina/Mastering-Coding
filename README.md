@@ -1,6 +1,6 @@
 ## Python Pactice
 
-<img height="220" src="dataquest.io/wp-content/uploads/2021/04/python_practice.jpg">
+<img height="220" src="https://www.dataquest.io/wp-content/uploads/2021/04/python_practice.jpg">
 
 <br>
 
