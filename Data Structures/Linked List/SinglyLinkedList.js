@@ -108,6 +108,25 @@ class SingleLinkedList {
         this.length--;
         return this.printList();
     }
+
+    // Reversing the linked list
+    reverse() {
+        if (!this.head.next) {
+            return this.head;
+        }
+        let first = this.head;
+        this.tail = this.head;
+        let second = first.next;
+        while (second) {
+            const temp = second.next;
+            second.next = first;
+            first = second;
+            second = temp;
+        }
+        this.head.next = null;
+        this.head = first;
+        return this.printList()
+    }
 }
 
 
@@ -120,3 +139,4 @@ myLinkedList2.prepend(1);
 myLinkedList2.insert(2, 99);
 myLinkedList2.remove(2);
 myLinkedList2.remove(20);
+myLinkedList2.reverse();

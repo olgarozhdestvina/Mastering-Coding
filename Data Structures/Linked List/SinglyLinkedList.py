@@ -97,6 +97,27 @@ class SingleLinkedList:
 
         self.length -= 1
         return self
+
+    # Reversing the linked list
+    def reverse(self):
+        if not self.head['next']:
+            return self.head
+
+        first = self.head
+        self.tail = self.head
+        second = first['next']
+
+        while second:
+            temp = second['next']
+            second['next'] = first
+            first = second
+            second = temp
+
+        self.head['next'] = None
+        self.head = first
+        return self
+
+
             
        
 # Print outs
@@ -108,4 +129,5 @@ my_linked_list.insert(2, 99)
 my_linked_list.insert(20, 89)
 my_linked_list.remove(2)
 my_linked_list.remove(20)
+my_linked_list.reverse()
 print(my_linked_list.print_list())
