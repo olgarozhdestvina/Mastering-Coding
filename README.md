@@ -14,6 +14,7 @@ The project list:
  * Web scraping of hacker news
  * Web development using *flask* (using a site template from HTML5 UP)
  * Working with PDF files
+ * Working with Data Structures (implementation and simple exercises in Python and JavaScript)
 
 ----
 
