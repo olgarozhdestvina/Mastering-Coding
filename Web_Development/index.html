@@ -9,10 +9,9 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="shortcut icon" href="assets/images/favicon.png" />
+		<link rel="shortcut icon" href="assets/images/assetfavicon.png" />
 	</head>
 	<body class="is-preload">
-
 		<!-- Header -->
 			<div id="header">
 
@@ -57,15 +56,21 @@
 				<!-- Intro -->
 					<section id="top" class="one dark cover">
 						<div class="container">
-
+							<!-- Thank you message  -->
+							{% with messages = get_flashed_messages() %}
+								{% if messages %}
+									{% for category, message in get_flashed_messages(with_categories=True) %}
+										<div class="alert alert-{{category}}"> {{ message }}</div>
+									{% endfor %}
+								{% endif %}
+							{% endwith %}
 							<header>
-								<h2 class="alt">Hi! I'm <strong>Olga</strong>, a Data Analytics student at Galway-Mayo Institute of Technology (GMIT).</h2>
-								<p>I am well-versed in a wide range of programming, scripting, <br />
-									and query languages and web technologies.</p>
+								<h2 class="alt">Hi! I'm <strong>Olga</strong>, <br />a Data Analytics student at Galway-Mayo Institute of Technology (GMIT).</h2>
+								<p>On my website you can find some examples of my projects with Github links. <br /> Have fun in browsing through the content and thank you for visiting!</p>
 							</header>
 
 							<footer>
-								<a href="#portfolio" class="button scrolly">Portfolio</a>
+								<a href="#portfolio" class="button scrolly">Take me to the portfolio</a>
 							</footer>
 
 						</div>
@@ -78,11 +83,6 @@
 							<header>
 								<h2>Portfolio</h2>
 							</header>
-
-							<p>Vitae natoque dictum etiam semper magnis enim feugiat convallis convallis
-							egestas rhoncus ridiculus in quis risus amet curabitur tempor orci penatibus.
-							Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis
-							fusce hendrerit lacus ridiculus.</p>
 
 							<div class="row">
 								<div class="col-4 col-12-mobile">
@@ -142,12 +142,12 @@
 
 							<a href="#" class="image featured"><img src="assets/images/about_me.jpg" alt="About Me" /></a>
 
-							<p>Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus
-							ultricies curae quis et rhoncus velit. Lobortis elementum aliquet nec vitae
-							laoreet eget cubilia quam non etiam odio tincidunt montes. Elementum sem
-							parturient nulla quam placerat viverra mauris non cum elit tempus ullamcorper
-							dolor. Libero rutrum ut lacinia donec curae mus vel quisque sociis nec
-							ornare iaculis.</p>
+							<p>Currently, I am studying for a Higher Diploma in Science in Computing Data Analytics at Galway-Mayo Institute of Technology (GMIT), 
+								working toward my degree, and looking for ways to put my new knowledge and skills to use in a work environment. 
+								I am well-versed in a wide range of programming, scripting, and query languages. I am experienced in web, database and deployment technologies
+								as well as machine learning and statistics. I enjoy working hard to continuously expand my skill set.
+								To date, I have completed 9 out of 10 modules and will graduate in June 2021 with an expected First Honours result.
+							</p>
 
 						</div>
 					</section>
@@ -159,13 +159,9 @@
 							<header>
 								<h2>Contact</h2>
 							</header>
+							<p>I would love to hear from you! Please drop me a message and let's see how I can help you.</p>
 
-							<p>Elementum sem parturient nulla quam placerat viverra
-							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
-							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
-							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
-
-							<form method="post" action="#">
+							<form method="post" action="submit_form">
 								<div class="row">
 									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
 									<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
@@ -183,12 +179,13 @@
 
 			</div>
 
+
 		<!-- Footer -->
 			<div id="footer">
 
 				<!-- Copyright -->
 					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; Olga Rozhdestvina. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 
 			</div>
@@ -201,6 +198,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/alert.js"></script>
 
 	</body>
 </html>

@@ -1,12 +1,38 @@
-from flask import Flask, render_template
+from flask import Flask, session, flash, redirect, request, render_template, url_for
 from werkzeug.exceptions import BadRequest, NotFound, MethodNotAllowed, InternalServerError
 import os
+from datetime import timedelta
 
 app = Flask(__name__, template_folder=os.getcwd(), static_folder='assets')
+
+# Secret key to login.
+app.secret_key = 'someKey'
+
+# Store session.
+app.permanent_session_lifetime = timedelta(minutes=30)
+# session.permanent = True <--- only for active http
+
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
+@app.route('/submit_form', methods=['POST', 'GET'])
+def submit_form():
+    if request.method == 'POST':
+        # set session
+        session.permanenet = True
+        data = request.form.to_dict()
+        
+        error = None
+        if error is None:
+            flash(f'Thank you! I will get in touch with you shortly', 'success')
+            return redirect(url_for('index'))
+        else:
+            flash(error, 'Something went wrong. Please try again!')
+            
+
 
 # Error handlers.
 @app.errorhandler(BadRequest)

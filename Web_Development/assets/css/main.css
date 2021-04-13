@@ -1977,6 +1977,7 @@ input, select, textarea {
 			background-color: #7eaeac;
 		}
 
+		
 /* Item */
 
 	.item {
@@ -1994,6 +1995,7 @@ input, select, textarea {
 			.item header h3 {
 				font-size: 1em;
 			}
+	
 
 /* Icons */
 
@@ -2248,7 +2250,8 @@ input, select, textarea {
 
 			#main > section.one {
 				background-color: #81918E;
-				background-image: url("../images/banner.jpg");
+				background-image: url("../images/banner.jpg"), opacity 0.2;
+				
 			}
 
 			#main > section.two {
@@ -2629,5 +2632,4 @@ input, select, textarea {
 				#footer .copyright li:first-child {
 					margin-top: 0;
 				}
-
 	}
