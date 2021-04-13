@@ -1,24 +1,6 @@
-// apples
-//8947 --> grapes
-//          8742 --> pears
-//                    372 --> null
+// Implementation of a single link list. 
 
-let myLinkedList = {
-    head: {
-        value: 10,
-        next: //pointer to the next 
-        {value: 5,
-            next: {
-                value: 16,
-                next: {
-                    value: null
-                }
-            }
-        }
-    }
-}
-
-class LinkedList {
+class SingleLinkedList {
     constructor(value) {
         this.head = {
             value: value,
@@ -29,6 +11,7 @@ class LinkedList {
         this.length = 1;
     }
 
+    // Print the linked list
     printList() {
         const array = [];
         let currentNode = this.head;
@@ -40,6 +23,7 @@ class LinkedList {
         return array;
     }
 
+    // Appending a new node to the linked list
     append(value) {
         const newNode = {
             value: value,
@@ -52,6 +36,7 @@ class LinkedList {
         return this.printList();
     }
 
+    // Prepending a new node to the linked list
     prepend(value) {
         const newNode = {
             value: value,
@@ -64,6 +49,7 @@ class LinkedList {
         return this.printList();
     }
 
+    // Find a node by its index
     traverseToIndex(index) {
         //check for params --> assuming valid
         let counter = 0;
@@ -77,6 +63,7 @@ class LinkedList {
 
     }
 
+    // Insert a new node by its index 
     insert(index, value) {
         // check params
         if (index === 0) {
@@ -86,6 +73,7 @@ class LinkedList {
         if (index >= this.length) {
             this.append(value);
         } else {
+
         const newNode = {
             value: value,
             next: null
@@ -99,14 +87,36 @@ class LinkedList {
         this.length++;
 
         return this.printList();
-    }}
+        }
+    }
+
+    // Remove a node by its index
+    remove(index) {
+        if (index === 0) {
+            this.head = this.head.next;
+        };
+
+        if (index >= this.length) {
+            const leader = this.traverseToIndex(this.length-2);
+            leader.next = null
+        } else {
+
+            const leader = this.traverseToIndex(index-1);
+            const nodeToRemove = leader.next;
+            leader.next = nodeToRemove.next;
+        }
+        this.length--;
+        return this.printList();
+    }
 }
 
 
 
-//console.log(myLinkedList);
-const myLinkedList2 = new LinkedList(10);
+// Print outs
+const myLinkedList2 = new SingleLinkedList(10);
 myLinkedList2.append(5);
 myLinkedList2.append(16);
 myLinkedList2.prepend(1);
 myLinkedList2.insert(2, 99);
+myLinkedList2.remove(2);
+myLinkedList2.remove(20);
