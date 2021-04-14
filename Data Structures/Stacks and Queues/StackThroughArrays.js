@@ -1,9 +1,12 @@
+// Stack implementation using an array
+// LIFO
+
 class Stack {
     constructor() {
         this.array = [];
     }
 
-    // see the very top node
+    // See the very top node
     peek(){
         if(this.array.length == 0) {
             return null;}
@@ -11,19 +14,19 @@ class Stack {
         
     }
 
-    // add node to the top of the stck
+    // Add a node to the top of the stck
     push(value){
         this.array.push(value);
         return this;
     }
 
-    // remove the top node from the stack
+    // Remove the top node from the stack
     pop(){
         this.array.pop();
         return this;
     }
 
-    // check if it it empty
+    // Check if it it empty
     isEmpty() {
     if (!this.array) {
         return true; }
@@ -32,6 +35,7 @@ class Stack {
     }
 }
 
+// Print outs
 const myStack = new Stack();
 myStack.push('google');
 myStack.push('udemy');

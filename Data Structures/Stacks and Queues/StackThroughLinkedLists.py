@@ -1,3 +1,6 @@
+# Stack implementation using a linked list
+# LIFO
+
 class Stack:
     def __init__(self):
         self.top = None
@@ -5,12 +8,12 @@ class Stack:
         self.length = 0
     
 
-    # see the very top node
+    # See the very top node
     def peek(self):
         return self.top
 
 
-    # add node to the top of the stck
+    # Add node to the top of the stck
     def push(self, value):
         new_node = {
             'value': value,
@@ -27,18 +30,19 @@ class Stack:
         return self
 
 
-    # remove the top node from the stack
+    # Remove the top node from the stack
     def pop(self):
         if not self.top:
             return None
         elif self.top == self.bottom:
             self.bottom = None
 
-        self.top = self.top['next']
+        else:
+            self.top = self.top['next']
         self.length-=1
         return self
 
-    # check if it it empty
+    # Check if it it empty
     def is_empty(self):
         if not self.bottom:
             return True
@@ -46,7 +50,7 @@ class Stack:
 
     
 
-
+# Print outs
 my_stack = Stack()
 my_stack.push('google')
 my_stack.push('udemy')
