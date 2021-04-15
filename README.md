@@ -12,7 +12,6 @@ The project list:
  * Pwned password checker
  * Tweet bot using *tweepy*
  * Web scraping of hacker news
- * Web development using *flask* (using a site template from HTML5 UP)
  * Working with PDF files
  * Working with Data Structures (implementation and simple exercises in Python and JavaScript)
 
@@ -48,5 +47,3 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 #### Acknowledgment <a name="acknowledgment"></a>
 
 - [Stack Overflow](https://stackoverflow.com/)
-- [HTML5 UP](html5up.net)
-- [Unsplash](https://unsplash.com/)
