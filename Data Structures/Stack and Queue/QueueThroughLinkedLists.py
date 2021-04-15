@@ -1,7 +1,12 @@
 # Queue implementation through linked lits
 # FIFO
 
-class Queue:
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+class Queue(Node):
     def __init__(self):
         self.first = None
         self.last = None
@@ -15,18 +20,16 @@ class Queue:
 
     # Add a node to the queue
     def enqueue(self,value):
-        new_node = {
-            'value': value,
-            'next': None
-        }
+        super().__init__(value)
+        new_node = Node(value)
         if self.is_empty():
             self.last = new_node
             self.first = new_node
         else:
-            self.last['next'] = new_node
+            self.last.next = new_node
             self.last = new_node
         self.length += 1
-        return self
+        return self.value
 
 
     # Remove the first node
@@ -36,7 +39,7 @@ class Queue:
         elif self.first == self.last:
             self.first = None
         else:
-            self.first = self.first['next']
+            self.first = self.first.next
 
         self.length-=1
         return self
