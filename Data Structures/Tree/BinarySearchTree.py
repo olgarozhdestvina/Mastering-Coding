@@ -7,6 +7,7 @@ class BinarySearchTree:
     def __init__(self):
         self.root = None
 
+    # Insert a new node
     def insert(self, value):
         new_node = {
             'value': value,
@@ -35,6 +36,8 @@ class BinarySearchTree:
                     current_node = current_node['right']
         return self
 
+
+    # Search the tree for a value
     def lookup(self, value):
         if not self.root:
             return None
@@ -50,87 +53,87 @@ class BinarySearchTree:
                 current_node = current_node['right']
             elif current_node['value'] == value:
                 return current_node
-        return None
+        return f'{value} not found'
 
 
-
+    # Remove a node
     def remove(self, value):
         if not self.root:
-            return None
+            return False
 
-        # locate the number and find a successor
-        node_to_remove = self.root
-        parent_node = None
+        # Find a number and its succesor 
+        current_node = self.root
+        parent_node = current_node
 
-        while node_to_remove:
-            if value < node_to_remove['value']:
-                # Going left
-                parent_node = node_to_remove
-                node_to_remove = node_to_remove['left']
+        while current_node:
+            if value < current_node['value']:
+                parent_node = current_node
+                current_node = current_node['left']
+            elif value > current_node['value']:
+                parent_node = current_node
+                current_node = current_node['right']
+            # if a match
+            elif current_node['value'] == value:
+           
+            # CASE 1: No right child:
+                if current_node['right'] == None:
+                    if parent_node == None:
+                        self.root = current_node['left']
+                    else:
+                        # if parent > current value, make current left child a child of parent
+                        if current_node['value'] < parent_node['value']:
+                            parent_node['left'] = current_node['left']
 
-            elif value > node_to_remove['value']:
-                # Going right
-                parent_node = node_to_remove
-                node_to_remove = node_to_remove['right']
-
-            # if match:
-            elif node_to_remove['value'] == value:
-
-               # CASE 1: No right child.
-                if not node_to_remove['right']:
-
-                    # if root
-                    if not parent_node:
-                        self.root = node_to_remove['left']
-                        break
-
-                        # make left child a left child of the parent node
-                    elif node_to_remove['value'] < parent_node['value']:
-                        parent_node['left'] = node_to_remove['left']
-
-                        # make left child a right child of then parent node
-                    elif node_to_remove['value'] > parent_node['value']:
-                        parent_node['right'] = node_to_remove['left']
+                        # if parent < current value, make left child a right child of parent
+                        elif current_node['value'] > parent_node['value']:
+                            parent_node['right'] = current_node['left']
+                    return f'{value} was removed'
 
                 # CASE 2: Right child doesn't have a left child
-                elif not node_to_remove['right']['left']:
-                    node_to_remove['right']['left'] = node_to_remove['left']
+                elif current_node['right']['left'] == None:
+                    current_node['right']['left'] = current_node['left']
 
-                    # make right child a left child of the parent node
-                    if node_to_remove['value'] < parent_node['value']:
-                        parent_node['left'] = node_to_remove['right']
+                    if parent_node == None:
+                        self.root = current_node['right']
+                    else:
+                        # if parent > current, make right child of the left the parent
+                        if current_node['value'] < parent_node['value']:
+                            parent_node['left'] = current_node['right']
 
-                    # make right child a right child of then parent node
-                    elif node_to_remove['value'] > parent_node['value']:
-                        parent_node['right'] = node_to_remove['right']
+                        # if parent < current, make right child a right child of the parent
+                        elif current_node['value'] > parent_node['value']:
+                            parent_node['right'] = current_node['right']
+                    return f'{value} was removed'
 
-                # Case 3: Right child has left a left child
+                # CASE 3: Right child that has a left child
                 else:
 
-                    # find the right child left most child
-                    left_most = node_to_remove['right']['left']
-                    left_most_parent = node_to_remove['right']
+                    # find the Right child's left most child
+                    leftmost = current_node['right']['left']
+                    leftmost_parent = current_node['right']
+                    
+                    while leftmost['left'] != None:
+                        leftmost_parent = leftmost
+                        leftmost = leftmost['left']
 
-                    while left_most['left']:
-                        left_most_parent = left_most
-                        left_most = left_most['left']
+                    # Parent's left subtree is now leftmost's right subtree
+                    leftmost_parent['left'] = leftmost['right']
+                    leftmost['left'] = current_node['left']
+                    leftmost['right'] = current_node['right']
 
-                    # parent's left subtree is now left most's right subtree
-                    left_most_parent['left'] = left_most['right']
-                    left_most['left'] = node_to_remove['left']
-                    left_most['right'] = node_to_remove['right']
-
-                    if not parent_node:
-                        self.root = left_most
-
+                    if parent_node == None:
+                        self.root = leftmost
                     else:
-                        if node_to_remove['value'] < parent_node['value']:
-                            parent_node['left'] = left_most
-                        elif node_to_remove['value'] > parent_node['value']:
-                            parent_node['right'] = left_most
+                        if current_node['value'] < parent_node['value']:
+                            parent_node['left'] = leftmost
+                        elif current_node['value'] > parent_node['value']:
+                            parent_node['right'] = leftmost
+                    return f'{value} was removed'
+        # if value not found 
+        return f'{value} not found'
+            
 
-        return True
-
+ 
 
 if __name__ == '__main__':
     tree = BinarySearchTree()
@@ -142,6 +145,8 @@ if __name__ == '__main__':
     tree.insert(15)
     tree.insert(1)
     # print(tree.__dict__)
-    tree.lookup(170)
-    tree.remove(170)
-    # print(tree.__dict__)
+    print(tree.lookup(170))
+    print(tree.lookup(3))
+    print(tree.remove(170))
+    print(tree.remove(3))
+    print(tree.__dict__)
