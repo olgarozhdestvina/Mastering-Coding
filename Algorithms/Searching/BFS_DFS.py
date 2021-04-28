@@ -1,7 +1,4 @@
-# Binary Search Tree
-# Left child - always descreses right - always increases
-# Balances (O(log n)) vs unbalances (could become O(n))
-
+# Breadth First Search and Depth First Search
 
 class BinarySearchTree:
     def __init__(self):
@@ -166,7 +163,52 @@ class BinarySearchTree:
 
         return self.breadth_first_seacrh_recursive(queue, l)
 
- 
+    # In-order -> [1, 4, 6, 9, 15, 20, 170]
+    def depth_first_search_in_order(self):
+        return traverse_in_order(self.root, [])
+
+    # Pre-order -> [9, 4, 1, 6, 20, 15, 170] - Tree recreation 
+    def depth_first_search_pre_order(self):
+        return traverse_pre_order(self.root, [])
+
+    # Post-order -> [1, 6, 4, 15, 170, 20, 9] - children before parent
+    def depth_first_search_post_order(self):
+        return traverse_post_order(self.root, [])
+
+def traverse_in_order(node, l):
+    if node['left']:
+        traverse_in_order(node['left'], l)
+    l.append(node['value'])
+
+    if node['right']:
+        traverse_in_order(node['right'], l)
+
+    return l
+
+def traverse_pre_order(node, l):
+    l.append(node['value'])
+
+    if node['left']:
+        traverse_pre_order(node['left'], l)
+
+    if node['right']:
+        traverse_pre_order(node['right'], l)
+
+    return l
+
+def traverse_post_order(node, l):
+    
+    if node['left']:
+        traverse_post_order(node['left'], l)
+
+    if node['right']:
+        traverse_post_order(node['right'], l)
+    l.append(node['value'])
+
+    return l
+
+
+
 
 if __name__ == '__main__':
     tree = BinarySearchTree()
@@ -177,5 +219,8 @@ if __name__ == '__main__':
     tree.insert(170)
     tree.insert(15)
     tree.insert(1)
-    print(tree.breadth_first_seacrh())
-    print(tree.breadth_first_seacrh_recursive([tree.root], []))
+    print('BFS', tree.breadth_first_seacrh())
+    print('BFS recursive', tree.breadth_first_seacrh_recursive([tree.root], []))
+    print('DFS in-order', tree.depth_first_search_in_order())
+    print('DFS pre-oder', tree.depth_first_search_pre_order())
+    print('DFS post-oder', tree.depth_first_search_post_order())

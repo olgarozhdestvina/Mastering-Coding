@@ -1,6 +1,4 @@
-// Binary Search Tree 
-// Left child - always descreses; right - always increases
-// Balances (O(log n)) vs unbalances (could become O(n))
+// Breadth First Search and Depth First Search
 
 class Node {
     constructor(value) {
@@ -155,7 +153,6 @@ class BinarySearchTree {
     breadthFirstSearch() {
         // start with the root
         let currentNode = this.root;
-        console.log(currentNode);
 
         // answer
         let list = [];
@@ -195,6 +192,56 @@ class BinarySearchTree {
         }
         return this.breadthFirstSearchRecursive(queue, list);
     }
+
+    // InOrder -> [1, 4, 6, 9, 15, 20, 170]
+    // PreOrder -> [9, 4, 1, 6, 20, 15, 170] - Tree recreation 
+    // PostOrder -> [1, 6, 4, 15, 170, 20, 9] - children before parent
+    depthFirstSearchInOrder() {
+        return traverseInOrder(this.root, []);
+    }
+
+    depthFirstSearchPreOrder() {
+        return traversePreOrder(this.root, []);
+    }
+
+    depthFirstSearchPostOrder() {
+        return traversePostOrder(this.root, []);
+    }
+}
+
+
+function traverseInOrder(node, list) {
+    console.log(node.value);
+    if (node.left) {
+        traverseInOrder(node.left, list);
+    }
+    list.push(node.value)
+    if (node.right) {
+        traverseInOrder(node.right, list);
+    }
+    return list;
+}
+
+function traversePreOrder(node, list) {
+    list.push(node.value);
+    if (node.left) {
+        traversePreOrder(node.left, list);
+    }
+    if (node.right) {
+        traversePreOrder(node.right, list);
+    }
+    return list;
+}
+
+function traversePostOrder(node, list) {
+    if (node.left) {
+        traversePostOrder(node.left, list);
+    }
+    if (node.right) {
+        traversePostOrder(node.right, list);
+    }
+    list.push(node.value);
+    return list;
 }
 
 function traverse(node) {
@@ -218,5 +265,9 @@ tree.insert(20);
 tree.insert(170);
 tree.insert(15);
 tree.insert(1);
-tree.breadthFirstSearch();
-tree.breadthFirstSearchRecursive([tree.root], []);
+//tree.breadthFirstSearch();
+//tree.breadthFirstSearchRecursive([tree.root], []);
+
+tree.depthFirstSearchInOrder();
+tree.depthFirstSearchPreOrder();
+tree.depthFirstSearchPostOrder();
