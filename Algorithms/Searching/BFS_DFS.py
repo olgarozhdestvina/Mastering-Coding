@@ -33,8 +33,8 @@ class BinarySearchTree:
                     current_node = current_node['right']
         return self
 
-
     # Search the tree for a value
+
     def lookup(self, value):
         if not self.root:
             return None
@@ -52,13 +52,13 @@ class BinarySearchTree:
                 return current_node
         return f'{value} not found'
 
-
     # Remove a node
+
     def remove(self, value):
         if not self.root:
             return False
 
-        # Find a number and its succesor 
+        # Find a number and its succesor
         current_node = self.root
         parent_node = current_node
 
@@ -71,8 +71,8 @@ class BinarySearchTree:
                 current_node = current_node['right']
             # if a match
             elif current_node['value'] == value:
-           
-            # CASE 1: No right child:
+
+                # CASE 1: No right child:
                 if current_node['right'] == None:
                     if parent_node == None:
                         self.root = current_node['left']
@@ -108,7 +108,7 @@ class BinarySearchTree:
                     # find the Right child's left most child
                     leftmost = current_node['right']['left']
                     leftmost_parent = current_node['right']
-                    
+
                     while leftmost['left'] != None:
                         leftmost_parent = leftmost
                         leftmost = leftmost['left']
@@ -126,15 +126,16 @@ class BinarySearchTree:
                         elif current_node['value'] > parent_node['value']:
                             parent_node['right'] = leftmost
                     return f'{value} was removed'
-        # if value not found 
+        # if value not found
         return f'{value} not found'
-            
+
+
     # Memmory consumption is big - if the tree is wide, don't use it
     def breadth_first_seacrh(self):
         # start with the root
         current_node = self.root
-        l = [] # answer
-        queue = [] # to keep track of children
+        l = []  # answer
+        queue = []  # to keep track of children
         queue.append(current_node)
 
         while len(queue) > 0:
@@ -148,7 +149,7 @@ class BinarySearchTree:
 
         return l
 
-
+    # Recursive BFS
     def breadth_first_seacrh_recursive(self, queue, l):
         if not len(queue):
             return l
@@ -163,17 +164,46 @@ class BinarySearchTree:
 
         return self.breadth_first_seacrh_recursive(queue, l)
 
+
+    # Determine if the tree is a valid BST
+    def isValidBST(self, root):
+        queue = []
+        current_value = root
+        prev = -float('inf')
+
+        while current_value or queue:
+            # Add all left nodes into the queue starting from the root
+            if current_value:
+                queue.append(current_value)
+                current_value = current_value['left']
+            else:
+                # Compare each node from the queue
+                # to its parent node
+                last_value = queue.pop()
+                if last_value:
+                    if last_value['value'] <= prev:
+                        return False
+                    prev = last_value['value']
+
+                # Repeat for the right node
+                current_value = last_value['right']
+        return True
+
+
     # In-order -> [1, 4, 6, 9, 15, 20, 170]
     def depth_first_search_in_order(self):
         return traverse_in_order(self.root, [])
 
-    # Pre-order -> [9, 4, 1, 6, 20, 15, 170] - Tree recreation 
+
+    # Pre-order -> [9, 4, 1, 6, 20, 15, 170] - Tree recreation
     def depth_first_search_pre_order(self):
         return traverse_pre_order(self.root, [])
+
 
     # Post-order -> [1, 6, 4, 15, 170, 20, 9] - children before parent
     def depth_first_search_post_order(self):
         return traverse_post_order(self.root, [])
+
 
 def traverse_in_order(node, l):
     if node['left']:
@@ -184,6 +214,7 @@ def traverse_in_order(node, l):
         traverse_in_order(node['right'], l)
 
     return l
+
 
 def traverse_pre_order(node, l):
     l.append(node['value'])
@@ -196,8 +227,9 @@ def traverse_pre_order(node, l):
 
     return l
 
+
 def traverse_post_order(node, l):
-    
+
     if node['left']:
         traverse_post_order(node['left'], l)
 
@@ -206,8 +238,6 @@ def traverse_post_order(node, l):
     l.append(node['value'])
 
     return l
-
-
 
 
 if __name__ == '__main__':
@@ -220,7 +250,9 @@ if __name__ == '__main__':
     tree.insert(15)
     tree.insert(1)
     print('BFS', tree.breadth_first_seacrh())
-    print('BFS recursive', tree.breadth_first_seacrh_recursive([tree.root], []))
+    print('BFS recursive',
+          tree.breadth_first_seacrh_recursive([tree.root], []))
     print('DFS in-order', tree.depth_first_search_in_order())
     print('DFS pre-oder', tree.depth_first_search_pre_order())
     print('DFS post-oder', tree.depth_first_search_post_order())
+    print(tree.isValidBST(tree.root))
