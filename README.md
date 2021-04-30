@@ -1,6 +1,6 @@
-## Python Pactice
+## Mastering Coding
 
-<img height="220" src="https://www.dataquest.io/wp-content/uploads/2021/04/python_practice.jpg">
+<img height="220" src="https://miro.medium.com/max/1190/1*wwJhYxYkSK_1m3JQ99-LJA.png">
 
 <br>
 
@@ -14,14 +14,7 @@ The project list:
  * Web scraping of hacker news
  * Working with PDF files
  * Working with Data Structures (implementation and simple exercises in Python and JavaScript)
-
-----
-
-
-### Table of Contents
-* [Set up](#set_up)
-* [License](#licence)
-* [Acknowledgment](#acknowledgment)
+ * Algoritms: Searching and Dynamic Programming (in Python and JavaScript))
 
 
 ----
@@ -47,3 +40,4 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 #### Acknowledgment <a name="acknowledgment"></a>
 
 - [Stack Overflow](https://stackoverflow.com/)
+- [leetCode](https://leetcode.com/)
