@@ -46,13 +46,25 @@ def memoized_fibonacci():
         return cache[n]
     return fib
 
+# Avoiding recursion
+@performance
+def bottom_up_fib(n):
+    answer = [0, 1]
+    i = 2
+    while i <= n:
+        answer.append(answer[i-1] + answer[i-2])
+        i += 1
+    return answer.pop()
+
+
 #print(fib_rec(30))
 #print(calculations)
 # time taken: 3.564558267593384
-# 832040
 
 fibonacci = memoized_fibonacci()
 print(fibonacci(30))
 print(calculations)
 # time taken: 0.0
-# 832040
+
+print(bottom_up_fib(30))
+# time taken: 0.0

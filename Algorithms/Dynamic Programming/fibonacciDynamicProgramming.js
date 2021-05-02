@@ -26,6 +26,16 @@ function memoizedFib() { // O(n)
     }
 }
 
+// Avoiding recusrsion
+function fibonacciBottomUp(n) {
+    let answer = [0,1];
+    for (let i=2; i<=n; i++) {
+        answer.push(answer[i-1] + answer[i-2]);
+    }
+    return answer.pop();
+}
+
+
 const fasterFib = memoizedFib();
 fasterFib(20);
-console.log('We did ' + calculations)
+fibonacciBottomUp(20);
